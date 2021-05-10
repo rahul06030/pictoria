@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import UploadForm from './components/UploadForm';
+import View from './components/View';
+import React, { useState } from 'react';
+import { Imagegrid } from './components/Imagegrid';
 
 function App() {
+  const [selectedImg, setSelectedImg] = useState(null);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+              <h1 style={{width:'100%' ,background:'white', marginBottom:'5%' ,  color:'black'}}> Pictoria </h1>
+
+      <Imagegrid setSelectedImg={setSelectedImg}/>
+      { selectedImg && (
+        <View selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+      )}
+      
+      <UploadForm/>
     </div>
   );
 }
