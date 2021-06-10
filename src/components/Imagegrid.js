@@ -15,7 +15,7 @@ export const Imagegrid = ({setSelectedImg}) => {
     })
     
     return (
-       <>
+       <div className="divv">
     {list && list.map((ele) =>{
     return(<>
     <h1>{ele}</h1>
@@ -27,6 +27,6 @@ export const Imagegrid = ({setSelectedImg}) => {
         </>
     )}
 )}
-       </>
+       </div>
     )
 }
